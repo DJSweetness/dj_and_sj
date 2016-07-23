@@ -33,6 +33,7 @@
     text-align: center;
     display: block;
     background-color: white;
+    -webkit-transition: all .2s;
 }
 
 .music:hover,
@@ -41,7 +42,7 @@
 .artwork:active 
 {
     height: 55%;
-    transition: .6s all;
+    transition: .6s all ;
     border: 3px solid #3399ff;
     
 }
