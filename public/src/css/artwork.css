@@ -19,22 +19,6 @@ input {
     margin: 10px auto;
 }
 
-
-
-/* 
-.input_group label {
-    color: #003366;
-    width: 125px;
-    margin-left: 10px;
-    padding-left: 10px;
-    border: 1px solid #3399ff;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-*/
-
 .left_bar {
     height: 100vh;
     width: 150px;
@@ -75,9 +59,30 @@ input {
 
 .art_thumbnails {
     height: 100vh;
-    width: 600px;
+    width: calc(100vw - 150px);
     display: inline-block;
     position: absolute;
     margin: 10px;
     padding: 0;
+}
+
+.images {
+    height: 350px;
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.images img{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+
+.images p,
+.images text {
+    margin: auto;
+    font-family: 'Impact', Charcoal, sans-serif;
+    font-size: 18px;
+    color: #3399ff;
 }

@@ -22,10 +22,12 @@
                 <div class="images">
                     <img src="{{ URL::secure($image->path) }}"></img>
                     <p>{{ $image->name }}</p>
-                    <text> {{$image->price}} </text>
+                    <text>${{$image->price}}</text>
                 </div>
             @endforeach
         </div>
+        
+        <!-- Future pagination -->
     </div>
 
 @endsection
