@@ -18,7 +18,13 @@
         </div>
         
         <div class="art_thumbnails">
-            
+            @foreach($images as $image)
+                <div class="images">
+                    <img src="{{ URL::secure($image->path) }}"></img>
+                    <p>{{ $image->name }}</p>
+                    <text> {{$image->price}} </text>
+                </div>
+            @endforeach
         </div>
     </div>
 

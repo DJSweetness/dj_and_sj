@@ -60,6 +60,7 @@ input {
     border-radius: 10px;
     background-color: #003366;
     display: block;
+    -webkit-transition: all .2s;
 }
 
 .btn:hover,
@@ -67,6 +68,7 @@ input {
     background-color: white;
     color: #003366;
     transition: all .2s;
+    cursor: pointer;
 }
 
 

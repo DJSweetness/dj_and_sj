@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
 class mainController extends Controller
 {
     public function getIndex() 
@@ -11,7 +13,8 @@ class mainController extends Controller
     
     public function getArtwork()
     {
-        return view('front_end.artwork');
+        $images = DB::table('images')->get();
+        return view('front_end.artwork', ['images' => $images]);
     }
     
     public function getMusic()
