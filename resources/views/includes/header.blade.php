@@ -1,7 +1,7 @@
 <header>
     <nav class="header_nav">
         <ul>
-            <li><a href="{{ route('index')}}">HOME</a></li>
+            <a href="{{ route('index')}}"><li>HOME</li></a>
         </ul>
     </nav>
 </header>

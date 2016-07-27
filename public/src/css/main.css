@@ -48,24 +48,13 @@ ul {
 .header_footer ul li {
     display: inline-block;
     padding: 16px 16px;
-    transition: background-color 0.2s;
+    background-color: #3399ff;
+    color:  #003366;
+    transition: background-color color 0.2s;
 }
 
 .header_nav li:hover {
     background-color: #003366;
-}
-
-.header_nav a {
-    color: #003366;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.header_nav li:hover a {
     color: #3399ff;
-}
-
-.header_nav a:hover,
-.header_nav a:active {
-    color: #003366;
+    transition: all .2s;
 }

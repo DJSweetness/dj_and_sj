@@ -1,29 +1,18 @@
 @extends('layouts.master')
 
 @section('styles')
+    <link rel="stylesheet" href="{{ URL::secure('src/css/music.css')}}" type="text/css" />
 @endsection
 
 @section('content')
 
-    <div class="container"><!--
-
-     --><div class="category">
-            Artwork
-            <div class="artwork">
-                <div class="images">
-                    <img src="{{ URL::secure('images/elephant.jpg') }}"><a href="#"></a></img>
-                </div>
-            </div>
-        </div><!-- 
-     --><div class="category">
-            Music
-            <div class="music">
-                <div class="images">
-                    <img src="{{ URL::secure('images/Album Cover.jpg') }}"><a href="#"></a></img>
-                </div>
-            </div>    
-        </div><!--
- --></div>
-        
+    <div class="container">
+       <div class="albums">
+           <div class="album">
+               <img src=""></img>
+               <p class="song_list"></p>
+           </div>
+       </div>
+    </div>
 
 @endsection
