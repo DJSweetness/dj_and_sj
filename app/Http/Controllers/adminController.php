@@ -19,7 +19,6 @@ class adminController extends Controller
             'password' => 'required'
         ]);
         
-        echo 'Hello';
         if (!Auth::attempt(['name' => $request['name'], 'password' => $request['password']]))
         {
             return redirect()->back()->with(['fail' => 'Could not log you in.']);
@@ -28,7 +27,7 @@ class adminController extends Controller
         return redirect()->route('admin.index');
     }
     
-    public function getIndex()
+    public function getIndex(Request $request)
     {
         return view('admin.index');
     }

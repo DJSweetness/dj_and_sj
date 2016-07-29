@@ -15,7 +15,7 @@ Route::get('/', function() {
     return view('index');
 });
 
-Route::get('/DJandSJ', [
+Route::get('/', [
     'uses' => 'mainController@getIndex',
     'as' => 'index'
 ]);

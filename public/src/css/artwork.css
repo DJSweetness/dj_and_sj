@@ -4,21 +4,6 @@
 
 
 */
-
-input {
-    display: block;
-    margin: 10px auto;
-    
-}
-
-.input_group,
-.btn {
-    font-family: 'Impact', Charcoal, sans-serif;
-    font-size: 18px;
-    color: #3399ff;
-    margin: 10px auto;
-}
-
 .left_bar {
     height: 100vh;
     width: 150px;
@@ -30,29 +15,6 @@ input {
     margin: 10px;
     display: inline-block;
     padding: 0;
-}
-
-.input_group input {
-    color: #003366;
-    height: 20px;
-    width: 100px;
-}
-
-.btn {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #003366;
-    display: block;
-    -webkit-transition: all .2s;
-}
-
-.btn:hover,
-.btn:active {
-    background-color: white;
-    color: #003366;
-    transition: all .2s;
-    cursor: pointer;
 }
 
 

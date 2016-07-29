@@ -1,0 +1,14 @@
+.info_box {
+    text-align: center;
+    width: auto;
+    max-width: 250px;
+    margin: auto;
+    padding: 16px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+.info_box.fail {
+    border: 1px solid black;
+    color: #e5003c;
+}
