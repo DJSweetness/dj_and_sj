@@ -29,3 +29,8 @@ Route::get('/music', [
     'uses' => 'mainController@getMusic',
     'as' => 'music'
 ]);
+
+Route::get('/login', [
+    'uses' => 'mainController@getLogin',
+    'as' => 'login'
+]);

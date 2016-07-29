@@ -11,7 +11,7 @@
            
            <div class="album">
                 <img src="{{ URL::secure('images/Album Cover.jpg')}}"></img>
-                <a href="https://play.spotify.com/artist/7CYNlZYIAhsdSfZriJFTR8">Listen On Spotify</a>
+                <a href="https://play.spotify.com/artist/7CYNlZYIAhsdSfZriJFTR8" target="_blank">Listen On Spotify</a>
                 <ul class="song_list">
                    <li>Follow Your Heart</li>
                    <li>Can't Wait</li>
@@ -22,7 +22,7 @@
            
            <div class="album">
                <img src="{{ URL::secure('images/willingtodream.jpg')}}"></img>
-               <a href="https://play.spotify.com/artist/0j4W5qS0GXaaKCMB1WtDKI">Listen On Spotify</a>
+               <a href="https://play.spotify.com/artist/0j4W5qS0GXaaKCMB1WtDKI" target="_blank">Listen On Spotify</a>
                <ul class="song_list">
                    <li>Let Love In</li>
                    <li>Runaway</li>

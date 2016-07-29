@@ -21,4 +21,9 @@ class mainController extends Controller
     {
         return view('front_end.music');
     }
+    
+    public function getLogin()
+    {
+        return view('admin.login');
+    }
 }
