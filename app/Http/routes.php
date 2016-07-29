@@ -30,7 +30,30 @@ Route::get('/music', [
     'as' => 'music'
 ]);
 
+
 Route::get('/login', [
-    'uses' => 'mainController@getLogin',
+    'uses' => 'adminController@getLogin',
     'as' => 'login'
 ]);
+
+Route::post('/index', [
+    'uses' => 'adminController@postLogin',
+    'as' => 'admin.login'
+]);
+
+Route::get('/index', [
+    'uses' => 'adminController@getLogout',
+    'as' => 'logout'
+]);
+
+/* Authentication needed */
+Route::group([
+       'prefix' => 'admin',
+       'middleware' => 'auth'
+    ], function() {
+        
+    Route::get('/index', [
+        'uses' => 'adminController@getIndex',
+        'as' => 'admin.index'
+    ]);
+});

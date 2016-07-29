@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class mainController extends Controller
 {
@@ -20,10 +21,5 @@ class mainController extends Controller
     public function getMusic()
     {
         return view('front_end.music');
-    }
-    
-    public function getLogin()
-    {
-        return view('admin.login');
     }
 }

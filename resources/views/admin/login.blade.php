@@ -6,11 +6,15 @@
 
 @section('content')
 
-    <form action="{{ route('admin.login') }}">
-        <input type="text" name="username" value="Username"/>
+    @include('includes.info_box')
+
+    <form action="{{ route('admin.login') }}" method="post">
+        <input type="text" name="name"/>
         <input type="password" name="password"/>
         <input type="submit" value="Submit"/>
         <input type="hidden" name="_token" value="{{ Session::token() }}" />
     </form>
+    
+    
     
 @endsection
