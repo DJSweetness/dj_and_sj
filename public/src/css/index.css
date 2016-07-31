@@ -8,12 +8,9 @@
 .container {
     height: 700px;
     width: 700px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 0;
     text-align: center;
-    font-family: 'Impact', Charcoal, sans-serif;
-    font-size: 16px;
-    color: #3399ff;
 }
 
 .category {
@@ -27,11 +24,11 @@
 .category img {
     height: 100%;
     width: 100%;
+    border: 2px solid black;
     transition: all .5s;
 }
 
 .category img:hover {
     height: 110%;
-    border: 2px solid #3399ff;
     transition: all .5s;
 }

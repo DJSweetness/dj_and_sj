@@ -5,18 +5,7 @@
 
 */
 
-
 /* General */
-body {
-    padding: 0;
-    margin: 0;
-    background-color:  #003366;
-}
-
-.main body {
-    background-color:  #003366;
-}
-
 a {
     text-decoration: none;
 }
@@ -25,15 +14,21 @@ ul {
     list-style: none;
 }
 
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: white;
+}
+
 /* Navigation */
 .header_nav {
-    box-shadow: 0px 2px 2px #003366;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 0px 2px 2px lightgray;
     text-align: center;
-    font-family: 'Impact', Charcoal, sans-serif;
-    font-size: 32px;
-    background-color: #3399ff;
-    padding: 0;
-    margin: 0 auto;
+    font-size: 36px;
+    margin: 30px 0;
+    background-color: #9999ff;
 }
 
 .header_nav ul,
@@ -46,60 +41,66 @@ ul {
 .header_nav ul li,
 .header_footer ul li {
     display: inline-block;
-    padding: 16px 16px;
-    background-color: #3399ff;
-    color:  #003366;
-    transition: background-color color 0.2s;
+    padding: 20px 16px;
+    transition: background-color 0.2s;
 }
 
-.header_nav li:hover {
-    background-color: #003366;
-    color: #3399ff;
+.header_nav ul li:hover {
+    background-color: white;
     transition: all .2s;
+}
+
+.header_nav ul li:hover a {
+    color: #9999ff;
+    transition: all .2s;
+}
+
+.header_nav a {
+    color: black;
+    transition: all 0.2s;
+}
+
+.header_nav a:hover,
+.header_nav a:active {
+    color: #9999ff;
+}
+
+/* End Navigation */
+
+form {
+    margin: 20px auto;
 }
 
 input {
     display: block;
     margin: 10px auto;
-    
-}
-
-.input_group,
-.btn {
-    font-family: 'Impact', Charcoal, sans-serif;
-    font-size: 18px;
-    color: #3399ff;
-    margin: 10px auto;
-}
-
-.input_group input {
-    color: #003366;
     height: 20px;
     width: 100px;
+    border: 1px solid black;
 }
 
 .btn {
+    height: 20px;
     width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #003366;
-    display: block;
-    -webkit-transition: all .2s;
+    background-color: white;
+    font-weight: bold;
+    color: #9999ff;
+    transition: all .2s;
 }
 
 .btn:hover,
 .btn:active {
-    background-color: white;
-    color: #003366;
+    color: white;
+    background-color: #9999ff;
     transition: all .2s;
     cursor: pointer;
 }
 
-.footer {
-    margin: auto auto;
-    margin-bottom: 50px;
-    font-size: 16px;
-    font-family: 'Impact', Charcoal, sans-serif;
-    color: white;
-    text-align: center;
+.upload {
+    width: 86px;
+}
+
+.pagination a {
+    color: black;
+    font-size: 36px;
 }

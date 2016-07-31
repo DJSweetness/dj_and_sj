@@ -10,11 +10,11 @@
         @yield('styles')
         
         <body>
-            @include('includes.header')
+            
+            @include('includes.admin_header')
             <div class="main">
                 @yield('content')
             </div>
-            @include('includes.footer')
             
         </body>
     

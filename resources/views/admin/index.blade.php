@@ -10,7 +10,7 @@
         
         <div class="category">
             <text>Artwork</text>
-            <a href="{{ route('artwork') }}"><img src="{{ URL::secure('images/elephant.jpg') }}"></img></a>
+            <a href="{{ route('admin.artwork') }}"><img src="{{ URL::secure('images/elephant.jpg') }}"></img></a>
         </div>
         
         <div class="category">

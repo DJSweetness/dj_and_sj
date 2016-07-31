@@ -10,13 +10,15 @@
         @yield('styles')
         
         <body>
+            
             @include('includes.header')
+            
             <div class="main">
                 @yield('content')
             </div>
             
         </body>
-    
+        
     </head>
     
 </html>

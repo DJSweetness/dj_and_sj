@@ -1,1 +1,0 @@
-<a class="footer" href="{{ route('logout') }}">Logout</a>

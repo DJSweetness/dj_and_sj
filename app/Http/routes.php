@@ -25,6 +25,11 @@ Route::get('/artwork', [
     'as' => 'artwork'
 ]);
 
+Route::get('/artwork/{search?}', [
+    'uses' => 'mainController@getSearch',
+    'as' => 'artwork.search'
+]);
+
 Route::get('/music', [
     'uses' => 'mainController@getMusic',
     'as' => 'music'
@@ -55,5 +60,25 @@ Route::group([
     Route::get('/index', [
         'uses' => 'adminController@getIndex',
         'as' => 'admin.index'
+    ]);
+    
+    Route::get('/artwork', [
+        'uses' => 'adminController@getArtwork',
+        'as' => 'admin.artwork'
+    ]);
+    
+    Route::post('/upload', [
+        'uses' => 'adminController@upload',
+        'as' => 'upload'
+    ]);
+    
+    Route::get('{image_id}/delete', [
+        'uses' => 'adminController@delete',
+        'as' => 'delete'
+    ]);
+    
+    Route::get('{image_id}/singleImage', [
+        'uses' => 'adminController@getSingleImage',
+        'as' => 'single_image'
     ]);
 });

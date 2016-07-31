@@ -1,50 +1,75 @@
-/*
-    #003366 - the darker blue in nav
-    #3399ff - header nav background light blue
 
 
-*/
-.left_bar {
-    height: 100vh;
-    width: 150px;
-    border: 1px solid black;
-    color: white;
-    font-size: 20px;
+.container {
+    height: auto;
+    width: 100vw;
     text-align: center;
-    text-shadow: 1px 1px 1px black;
-    margin: 10px;
-    display: inline-block;
-    padding: 0;
 }
 
-
+.left_bar {
+    height: auto;
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+    border: 3px solid #9999ff;
+}
 
 .art_thumbnails {
-    height: 100vh;
-    width: calc(100vw - 150px);
-    display: inline-block;
+    height: auto;
+    width: 1000px;
+    min-width: 1000px;
     position: absolute;
-    margin: 10px;
-    padding: 0;
+    margin-left: 300px;
+    text-align: left;
 }
 
 .images {
-    height: 350px;
-    width: 300px;
-    margin: 50px auto;
-    text-align: center;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    border: 1px solid black;
+    text-align: left;
+    margin: 5px;
+    transition: all .2s;
 }
 
-.images img{
-    height: 300px;
-    width: 300px;
-    margin: auto;
+.images span a{
+    float: right;
+    margin-right: 5px;
+    transition: all .2s;
+}
+
+.images span a:hover,
+.images span a:active {
+    color: red;
+    transition: all .2s;
+}
+
+.images img {
+    height: 200px;
+    width: 200px;
 }
 
 .images p,
 .images text {
-    margin: auto;
-    font-family: 'Impact', Charcoal, sans-serif;
-    font-size: 18px;
-    color: #3399ff;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.images:hover,
+.images:active {
+    border: 1px solid #9999ff;
+    transition: all .2s;
+}
+
+.left_bar .logout {
+    color: #9999ff;
+    transition: all .2s;
+}
+
+.left_bar .logout:hover,
+.left_bar .logout:active {
+    color: red;
+    transition: all .2s;
 }

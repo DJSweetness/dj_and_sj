@@ -13,10 +13,11 @@ class ImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name');
             $table->string('path');
             $table->decimal('price');
-            $table->timestamp('created_at');
+            $table->timestamps('created_at');
         });
     }
 
