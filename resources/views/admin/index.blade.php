@@ -15,7 +15,7 @@
         
         <div class="category">
             <text>Music</text>
-            <a href="{{ route('music') }}"><img src="{{ URL::secure('images/Album Cover.jpg') }}"></img></a>
+            <a href="{{ route('admin.music') }}"><img src="{{ URL::secure('images/Album Cover.jpg') }}"></img></a>
         </div>
     </div>
     

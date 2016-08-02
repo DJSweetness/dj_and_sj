@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use DB;
-use Illuminate\Support\Facades\Input;
 use App\Images;
 use Intervention\Image\ImageManagerStatic as Image;
+use File;
 
 class adminController extends Controller
 {
@@ -36,11 +36,23 @@ class adminController extends Controller
         return view('admin.index');
     }
     
-    public function getArtwork()
+     public function getMusic()
     {
-        $images = DB::table('images')->orderBy('created_at', 'desc')->paginate(8);
-
-        return view('admin.artwork', ['images' => $images]);
+        return view('admin.music');
+    }
+    
+    public function getArtwork(Request $request)
+    {
+        $images = session()->get('images');
+        $filter = session()->get('filter');
+        
+        if ($images == null)
+        {
+            $images = DB::table('images')->paginate(8);
+            return view('admin.artwork', ['images' => $images]);
+        }
+        
+        return view('admin.artwork', compact('images', 'filter'));
     }
     
     public function upload(Request $request)
@@ -64,12 +76,12 @@ class adminController extends Controller
         //Move the image to our images folder with the user's fileName.
         $ImageObj = $request->file('file');
         $ImageObj = Image::make($ImageObj)->orientate();
-        $ImageObj->save('images/' . $fileName);
+        $ImageObj->save('images/' . $fileName . '.jpg');
         
         //Store image info.
         $image = new Images();
         $image->name = $fileName;
-        $image->path = 'images/' . $fileName;
+        $image->path = 'images/' . $fileName . '.jpg';
         $image->price = $price;
         
         //If saved to database, return success message.
@@ -95,10 +107,29 @@ class adminController extends Controller
         
     }
     
+    public function getSearch(Request $request)
+    {
+        
+       $this->validate($request, [
+            'search' => 'required|max:25'   
+        ]);
+        
+        $search = $request->get('search');
+        
+        $images = DB::table('images')->where('name', 'LIKE', '%'.$search .'%')->paginate(8);
+        
+        $message = 'The filter "' .$search. '" has been set.';
+                    
+        return redirect()->route( 'admin.artwork' )
+            ->with( 'images', $images )
+            ->with( 'filter', $message );
+    }
+    
     public function delete($image_id)
     {
         
         $image = Images::find($image_id);
+        File::delete('images/' . $image->name);
         
         if (!$image)
         {

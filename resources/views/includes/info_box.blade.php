@@ -15,6 +15,12 @@
         </section>
     @endif
     
+    @if(Session::has('filter'))
+        <section class="info_box success">
+            {{ Session::get('filter') }}
+        </section>
+    @endif
+    
     @if(count($errors) > 0)
         <section class="info_box fail">
                @foreach($errors->all() as $error)

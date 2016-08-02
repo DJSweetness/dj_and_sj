@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Images;
 use App\Http\Controllers\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use View;
 
 class mainController extends Controller
 {
@@ -15,23 +17,36 @@ class mainController extends Controller
         return view('index');
     }
     
-    public function getArtwork()
+    public function getArtwork(Request $request)
     {
-        $images = DB::table('images')->paginate(8);
+        $images = session()->get('images');
+        $filter = session()->get('filter');
         
-        return view('front_end.artwork', ['fail' => 'failed', 'images' => $images]);
+        if ($images == null)
+        {
+            $images = DB::table('images')->paginate(8);
+            return view('front_end.artwork', ['images' => $images]);
+        }
+        
+        return view('front_end.artwork', compact('images', 'filter'));
     }
     
-    public function getSearch(Request $request, $search)
+    public function getSearch(Request $request, $search = null)
     {
+        
         $this->validate($request, [
             'search' => 'required|max:25'   
         ]);
         
         $search = $request->get('search');
-        $images = DB::table('images')->where('name', '>=' , $search)->paginate(8);
         
-        return view(front_end.artwork, ['images' => $images, 'success' => 'A filter is set.']);
+        $images = DB::table('images')->where('name', 'LIKE', '%'.$search .'%')->paginate(8);
+        
+        $message = 'The filter "' .$search. '" has been set.';
+                    
+        return redirect()->route( 'artwork' )
+            ->with( 'images', $images )
+            ->with( 'filter', $message );
     }
     
     public function getMusic()

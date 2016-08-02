@@ -10,14 +10,17 @@
 
     <div class="container">
         <div class="left_bar">
-            <form action="" method="post">
+            <form action="{{ route('admin.artwork.search') }}" method="get">
                 Find Art Here
                 <div class="input_group">
                     <input type='text' name='search' id='search' placeholder="Search Artwork" />
                     <button type="submit" class="btn">Search</button>
-                    <input type="hidden" name="_token" value="Session::token()" />
                 </div>
             </form>
+            
+            @if(Session::has('filter'))
+                <a href="{{ route('admin.artwork') }}">Delete Filter</a>
+            @endif
             
             <form action="{{ route('upload')}}" method="post" enctype="multipart/form-data">
                 Select image to upload:

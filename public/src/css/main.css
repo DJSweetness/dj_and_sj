@@ -23,46 +23,29 @@ body {
 
 /* Navigation */
 .header_nav {
-    border-bottom: 1px solid lightgray;
-    box-shadow: 0px 2px 2px lightgray;
     text-align: center;
     font-size: 36px;
-    margin: 30px 0;
-    background-color: #9999ff;
+    margin-top: 0;
 }
 
 .header_nav ul,
 .header_footer ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 0px 2px 2px lightgray;
+    padding: 15px;
+    margin: 40px 0;
+    background-color: #9999ff;
 }
 
-.header_nav ul li,
-.header_footer ul li {
-    display: inline-block;
-    padding: 20px 16px;
-    transition: background-color 0.2s;
-}
-
-.header_nav ul li:hover {
-    background-color: white;
-    transition: all .2s;
-}
-
-.header_nav ul li:hover a {
-    color: #9999ff;
-    transition: all .2s;
-}
-
-.header_nav a {
+.header_nav ul a {
     color: black;
     transition: all 0.2s;
 }
 
 .header_nav a:hover,
 .header_nav a:active {
-    color: #9999ff;
+    color: white;
 }
 
 /* End Navigation */
