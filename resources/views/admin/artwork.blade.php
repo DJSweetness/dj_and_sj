@@ -42,7 +42,7 @@
             
             @foreach($images as $image)
                 <div class="images">
-                    <a href="{{ route('single_image', ['image_id' => $image->id]) }}"><img src="{{ URL::secure($image->path) }}"></img></a>
+                    <a href="{{ route('admin.single_image', ['image_id' => $image->id]) }}"><img src="{{ URL::secure($image->path) }}"></img></a>
                     <p>{{ $image->name }}</p>
                     <text>${{$image->price}}</text>
                     <span><a href="{{ route('delete', ['image_id' => $image->id]) }}">x</a></span>

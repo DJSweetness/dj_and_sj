@@ -17,6 +17,19 @@ class mainController extends Controller
         return view('index');
     }
     
+    public function getSingleImage($image_id)
+    {
+        $image = Images::find($image_id);
+        
+        if (!$image)
+        {
+            return redirect()->route('artwork')->with(['fail' => 'Image not found!']);
+        }
+        
+        return view('front_end.single_image', ['image' => $image]);
+        
+    }
+    
     public function getArtwork(Request $request)
     {
         $images = session()->get('images');

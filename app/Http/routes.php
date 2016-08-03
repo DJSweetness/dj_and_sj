@@ -35,6 +35,11 @@ Route::get('/music', [
     'as' => 'music'
 ]);
 
+Route::get('{image_id}/singleImage', [
+    'uses' => 'mainController@getSingleImage',
+    'as' => 'single_image'
+]);
+
 
 Route::get('/login', [
     'uses' => 'adminController@getLogin',
@@ -84,7 +89,7 @@ Route::group([
     
     Route::get('{image_id}/singleImage', [
         'uses' => 'adminController@getSingleImage',
-        'as' => 'single_image'
+        'as' => 'admin.single_image'
     ]);
     
     Route::get('/artwork/search', [
